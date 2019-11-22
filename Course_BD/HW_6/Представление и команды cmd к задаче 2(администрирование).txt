@@ -1,0 +1,5 @@
+create view username as select id, name from accounts; 
+
+create user 'user_read'@'localhost' identified by '123';
+grant select on shp.username to 'user_read'@'localhost';
+flush privileges;
