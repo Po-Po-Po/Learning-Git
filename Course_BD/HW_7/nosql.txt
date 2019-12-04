@@ -1,0 +1,58 @@
+127.0.0.1:6379> HINCRBY address '255.0.0.0' 1
+(integer) 1
+127.0.0.1:6379> hgetall address
+1) "255.0.0.0"
+2) "1"
+127.0.0.1:6379> hincrby address '255.255.0.0' 1
+(integer) 1
+127.0.0.1:6379> hgetall address
+1) "255.0.0.0"
+2) "1"
+3) "255.255.0.0"
+4) "1"
+127.0.0.1:6379> HSET emails 'Tommy' 'Tommy@gmail.com'
+(integer) 1
+127.0.0.1:6379> HSET emails 'Jimmy' 'Jimmy@gmail.com'
+(integer) 1
+127.0.0.1:6379> HSET emails 'Rammy' 'Rammy@gmail.com'
+(integer) 1
+127.0.0.1:6379> HGETALL emails
+1) "Tommy"
+2) "Tommy@gmail.com"
+3) "Jimmy"
+4) "Jimmy@gmail.com"
+5) "Rammy"
+6) "Rammy@gmail.com"
+127.0.0.1:6379> hget emails Tommy
+"Tommy@gmail.com"
+127.0.0.1:6379> HSET user_email 'Jimmy@gmail.com' 'Jimmy'
+(integer) 1
+127.0.0.1:6379> HSET user_email 'Tommy@gmail.com' 'Tommy'
+(integer) 1
+127.0.0.1:6379> HSET user_email 'Rammy@gmail.com' 'Rammy'
+(integer) 1
+127.0.0.1:6379> HGET user_email 'Rammy@gmail.com'
+"Rammy"
+
+
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+shop    0.000GB
+> use shop
+switched to db shop
+> db.catalogs.find()
+{ "_id" : ObjectId("5de7cec2f9269a5770a4db3f"), "name" : "Системный блок" }
+{ "_id" : ObjectId("5de7cedbf9269a5770a4db40"), "name" : "Видеокарта" }
+{ "_id" : ObjectId("5de7cef3f9269a5770a4db41"), "name" : "Материнская плата" }
+> db.products.insert({name: 'Geforce GTX 1060', catalog_id: new ObjectId("5de7cedbf9269a5770a4db40")});
+WriteResult({ "nInserted" : 1 })
+> db.products.insert({name: 'Geforce GTX Titan', catalog_id: new ObjectId("5de7cedbf9269a5770a4db40")});
+WriteResult({ "nInserted" : 1 })
+> db.products.find()
+{ "_id" : ObjectId("5de7cf9cf9269a5770a4db42"), "name" : "Красивый системный блок", "catalog_id" : ObjectId("5de7cec2f9269a5770a4db3f") }
+{ "_id" : ObjectId("5de7d1ffdbc069c8e9672729"), "name" : "Geforce GTX 1060", "catalog_id" : ObjectId("5de7cedbf9269a5770a4db40") }
+{ "_id" : ObjectId("5de7d225dbc069c8e967272a"), "name" : "Geforce GTX Titan", "catalog_id" : ObjectId("5de7cedbf9269a5770a4db40") }
+
