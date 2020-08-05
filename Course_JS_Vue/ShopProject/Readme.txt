@@ -4,4 +4,4 @@ Single page application on Vue.
 
 index.html лежит в папке "public".
 
-Компоненты vue разбиты по отдельности и лежать в папке "public/js".
+Компоненты vue разбиты по отдельности и лежат в папке "public/js".
