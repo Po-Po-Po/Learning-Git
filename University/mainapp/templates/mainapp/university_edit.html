@@ -1,0 +1,16 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="product_edit">
+        <p>Название: {{ edit_university.name }}</p>
+        <p>Адресс: {{ edit_university.address }}</p>
+        <p>Предметы: {{ edit_university.subjects }}</p>
+            <a href="{% url 'main:delete' edit_university.pk %}" class="exit">Удалить</a>
+            <br/>
+            <a href="{% url 'main:index' %}" class="add">
+                на главную
+            </a>
+        </button>
+    </div>
+{% endblock %}

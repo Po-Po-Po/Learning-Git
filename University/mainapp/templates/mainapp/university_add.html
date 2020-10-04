@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <div class="new_category_form">
+        <form class="form-horizontal" action="{% url 'main:add' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ create_form.as_p }}
+            <input class="form-control add" type="submit" value="сохранить">
+        </form>
+            <a href="{% url 'main:index' %}" class="add">
+                к списку университетов
+            </a>
+        </button>
+    </div>
+{% endblock %}
