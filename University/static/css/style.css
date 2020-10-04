@@ -1,0 +1,91 @@
+
+table {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 14px;
+border-collapse: collapse;
+text-align: center;
+}
+th, td:first-child {
+background: #AFCDE7;
+color: white;
+padding: 10px 20px;
+}
+th, td {
+border-style: solid;
+border-width: 0 1px 1px 0;
+border-color: white;
+}
+td {
+background: #D8E6F3;
+}
+th:first-child, td:first-child {
+text-align: left;
+}
+
+.add, .exit{ 
+  text-decoration: none; /* Отменяем подчеркивание у ссылки */
+  position: relative;
+  display: inline-block;
+  width: 240px;
+  height: 50px;
+  line-height: 2.5em;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #777;
+  color: #fff;
+  outline: none;
+  
+  border-radius: 5px;
+  
+  background: linear-gradient(#FB9575, #F45A38 48%, #EA1502 52%, #F02F17);
+  }
+
+a.exit{
+  border: 2px solid #F64C2B;
+  box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
+}
+
+.exit:active{
+  top: .1em;
+  left: .1em;
+  box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+}
+
+a.add, input.add{
+  border: 2px solid #1fcc24;
+  box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
+  color: rgb(245,245,245);
+  background: #0c9c0d linear-gradient(#82d18d, #0c9c0d);
+}
+.add:hover, .exit:hover{
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+.add:active, .exit:active{
+  top: 1px;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
+  box-shadow: 0 -1px 3px rgba(0,0,0,.3), 0 1px 1px #fff, inset 0 1px 2px rgba(0,0,0,.8), inset 0 -1px 0 rgba(0,0,0,.05);
+}
+
+a:visited{
+  text-decoration: none;
+}
+
+body {
+background-color: #DDD7D7;
+background-size: 50px 50px;
+background-image: 
+linear-gradient(-45deg, transparent 52%, rgba(255,255,255,0.9) 54%, transparent 55%, transparent),
+linear-gradient(45deg, transparent 52%, rgba(255,255,255,0.6) 54%, transparent 55%, transparent),
+linear-gradient(-45deg, transparent 50%, rgba(0,0,0,0.1) 52%, transparent 53%, transparent),
+linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.05) 52%, transparent 53%, transparent);
+}
+
+.container, .product_delete, .new_category_form, .product_edit{
+    margin-left: 36%; /* Отступ слева */
+    width: 40%; /* Ширина слоя */
+    padding: 150px; /* Поля вокруг текста */
+}

@@ -1,0 +1,23 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <p>Пользователь: {{ user.username }}</p>
+    <div class="container">
+        <table class="zebra">
+            <tr>
+                <th>University</th>
+                <th>Subjects</th>
+            </tr>
+            {% for university in universitys %}
+            <tr>
+                <td><a href="{% url 'main:edit' university.pk %}">{{ university.name }}</a></td>
+                <td>{{ university.subjects }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main:add' %}" class='add'>Добавить университет</a>
+        <br/>
+        <a href="{% url 'auth:logout' %}" class='exit' >Выйти</a>
+    </div>
+{% endblock %}
